@@ -1,8 +1,11 @@
+import ShowCombination from "../components/ShowCombination";
+
 const InGame = () => {
   return (
-    <div>
+    <>
       <h1>InGame</h1>
-    </div>
+      <ShowCombination />
+    </>
   );
 };
 
