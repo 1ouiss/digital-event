@@ -19,12 +19,6 @@ export default function ShowCombination() {
 
   return (
     <>
-      hello
-      {combination.map((numbers) => (
-        <ul>
-          <li>{numbers}</li>
-        </ul>
-      ))}
       {index <= combination.length - 1 &&
         showCombination === true &&
         combination[index]}
