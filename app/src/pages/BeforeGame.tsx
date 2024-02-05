@@ -1,4 +1,4 @@
-const BeforeGame = () => {
+const BeforeGame = ({ playerId }: { playerId: string }) => {
   return (
     <div>
       <h1></h1>

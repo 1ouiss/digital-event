@@ -1,7 +1,7 @@
-const EndGame = () => {
+const EndGame = ({ playerId }: { playerId: string }) => {
   return (
     <div>
-      <h1>EndGame</h1>
+      <h1>EndGame {playerId}</h1>
     </div>
   );
 };

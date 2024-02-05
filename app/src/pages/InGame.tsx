@@ -1,6 +1,6 @@
 import ShowCombination from "../components/ShowCombination";
 
-const InGame = () => {
+const InGame = ({ playerId }: { playerId: string }) => {
   return (
     <>
       <ShowCombination />
