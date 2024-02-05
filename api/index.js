@@ -32,12 +32,13 @@ io.on("connection", (socket) => {
   socket.on("players", (data) => {
     console.log("Received message from client:", data);
 
-    // Emettre un événement 'message' à ce client
-    socket.emit("players", { text: "Message received!" });
-
-    // // Émettez un événement 'broadcastMessage' à tous les clients, sauf à l'émetteur
-    // socket.broadcast.emit("broadcastMessage", { text: "Broadcast message!" });
+    socket.emit("players", {
+      text: "Message received!",
+      id: socket.id,
+      userId: data.id,
+    });
   });
+
   socket.on("disconnect", () => {
     console.log(`user disconnected`);
   });
