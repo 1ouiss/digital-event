@@ -11,7 +11,7 @@ const PlayerPage = () => {
 
   return (
     <>
-      {!game.isActive && !game.chronoStarted && !game.gameStarted && (
+      {!game.isActive && !game.gameStarted && (
         <BeforeGame playerId={playerId as string} />
       )}
       {game.isActive && game.chronoStarted && game.gameStarted && (

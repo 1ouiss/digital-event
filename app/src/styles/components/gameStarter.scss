@@ -1,0 +1,50 @@
+.gamestarter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-starter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../public/assets/bg-starter.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 350px;
+  flex-direction: column;
+  padding-bottom: 80px;
+
+  h1 {
+    font-size: 90px;
+    color: #fff;
+  }
+}
+
+h2 {
+  font-size: 60px;
+  color: #fff;
+}
+
+// Animation game started
+
+@keyframes fadeInAndGrow {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animation-gamestarter {
+  animation: fadeInAndGrow 0.8s ease-in-out;
+}

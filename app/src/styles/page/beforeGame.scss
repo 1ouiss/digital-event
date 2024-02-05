@@ -1,0 +1,45 @@
+.gamestarter-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background-image: url("../../../public/assets/backgroundBeforeGame.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-decoration-up {
+  width: 100%;
+  height: 50px;
+  background-image: url("../../../public/assets/bg-up.png");
+  background-position: center;
+  background-size: cover;
+  margin-top: 30px;
+}
+
+.title-beforeGame {
+  font-size: 60px;
+  color: #fff;
+}
+
+.logoGame {
+  width: 280px;
+  height: 400px;
+  background-image: url("../../../public/assets/logoGame.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bg-decoration-down {
+  width: 100%;
+  height: 50px;
+  background-image: url("../../../public/assets/bg-down.png");
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 30px;
+}
