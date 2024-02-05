@@ -2,7 +2,7 @@ import { useState } from "react";
 // import CountDownTest from "../components/CountDownTest";
 import CountDownTimer from "../components/CountDownTimer";
 
-const InGame = () => {
+const InGame = ({ playerId }: { playerId: string }) => {
   const [endTimer, setEndTimer] = useState(false);
 
   // endTimer === false -> CountDownTimer
