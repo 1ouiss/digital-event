@@ -44,7 +44,17 @@ export default function ShowCombination({
         {combination &&
           index <= combination.length - 1 &&
           showCombination === true && (
-            <img src={`../assets/${combination[index]}.png`} alt="" />
+            <>
+              {combination[index] === 1 || combination[index] === 31 ? (
+                <img src="../assets/symbole1.png" alt="" />
+              ) : combination[index] === 2 || combination[index] === 47 ? (
+                <img src="../assets/symbole2.png" alt="" />
+              ) : combination[index] === 4 || combination[index] === 79 ? (
+                <img src="../assets/symbole3.png" alt="" />
+              ) : (
+                <></>
+              )}
+            </>
           )}
       </div>
     </div>
