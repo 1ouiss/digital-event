@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/components/CountDownTimer.scss";
 
 interface ICountdown {
   minutes: number;
@@ -37,10 +38,10 @@ const CountDownTimer = ({ minutes, seconds, setEndTimer }: any) => {
   });
 
   return (
-    <div>
-      <p>{`${time.minutes.toString().padStart(2, "0")}:${time.seconds
+    <div className="timerContainer">
+      <p className="timer">{`${time.minutes
         .toString()
-        .padStart(2, "0")}`}</p>
+        .padStart(2, "0")}:${time.seconds.toString().padStart(2, "0")}`}</p>
     </div>
   );
 };

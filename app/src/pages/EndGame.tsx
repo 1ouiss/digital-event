@@ -1,3 +1,6 @@
+import "../styles/page/EndGame.scss";
+// import "../styles/main.scss";
+
 const EndGame = () => {
   return (
     <div>

@@ -1,7 +1,6 @@
 import { useState } from "react";
 // import CountDownTest from "../components/CountDownTest";
 import CountDownTimer from "../components/CountDownTimer";
-// import CountDownTimer from "../components/CountDownTimer";
 
 const InGame = () => {
   const [endTimer, setEndTimer] = useState(false);
@@ -11,9 +10,14 @@ const InGame = () => {
   return (
     <>
       {endTimer === false ? (
-        <CountDownTimer minutes={0} seconds={5} setEndTimer={setEndTimer} />
+        <CountDownTimer minutes={3} seconds={0} setEndTimer={setEndTimer} />
       ) : (
-        <p> Bravo, la partie est terminée</p>
+        <>
+          <div className="hello">
+            <CountDownTimer minutes={0} seconds={0} setEndTimer={setEndTimer} />
+            <p className="lol">Bravo, la partie est terminée</p>
+          </div>
+        </>
       )}
     </>
   );
