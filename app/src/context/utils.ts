@@ -1,11 +1,12 @@
 export type GameType = {
   id: string;
   chronoStarted: boolean;
-  player1Domination: number;
   player1error: boolean;
   player2error: boolean;
   winnerIs: string;
   status: "before" | "inGame" | "endGame";
+  scorePlayer1: number;
+  scorePlayer2: number;
 };
 
 export type PlayerType = {
