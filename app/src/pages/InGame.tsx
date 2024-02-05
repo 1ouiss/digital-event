@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import CountDownTest from "../components/CountDownTest";
 import CountDownTimer from "../components/CountDownTimer";
+import ShowCombination from "../components/ShowCombination";
 
 const InGame = ({ playerId }: { playerId: string }) => {
   const [endTimer, setEndTimer] = useState(false);
@@ -19,6 +20,7 @@ const InGame = ({ playerId }: { playerId: string }) => {
           </div>
         </>
       )}
+      <ShowCombination />
     </>
   );
 };
