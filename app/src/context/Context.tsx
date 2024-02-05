@@ -48,6 +48,7 @@ const ContextProvider: FC<Props> = ({ children }) => {
 
   useEffect(() => {
     const url = window.location.href;
+    window.alert("test")
     if (url.includes('player1')) {
       getPlayer1();
     }
