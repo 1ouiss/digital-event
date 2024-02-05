@@ -15,5 +15,8 @@ body {
   font-size: normal;
 }
 
+* {
+  font-family: GraySun;
+}
 @import "./components/showCombination.scss";
 @import "./page/inGame.scss";
