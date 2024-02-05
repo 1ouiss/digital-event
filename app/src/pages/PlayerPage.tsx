@@ -1,33 +1,26 @@
-import { useEffect } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import io from "socket.io-client";
-// import socket from "../utils/socket";
+import { Context } from "../context/Context";
+import BeforeGame from "./BeforeGame";
+import InGame from "./InGame";
+import EndGame from "./EndGame";
 
 const PlayerPage = () => {
-  const { id } = useParams();
-
-  useEffect(() => {
-    const socket = io(import.meta.env.VITE_REACT_APP_API_URL);
-
-    socket.on("connect", () => {
-      console.log("connected");
-    });
-
-    socket.emit("players", { id });
-
-    socket.on("players", (data) => {
-      console.log(data);
-    });
-
-    return () => {
-      socket.disconnect();
-    };
-  }, []);
+  const { playerId } = useParams();
+  const { game } = useContext(Context);
 
   return (
     <>
-      <h1>Player Page</h1>
-      <p>Player ID: {id}</p>
+      {!game.isActive && !game.chronoStarted && !game.gameStarted && (
+        <BeforeGame playerId={playerId as string} />
+      )}
+      {game.isActive && game.chronoStarted && game.gameStarted && (
+        <InGame playerId={playerId as string} />
+      )}
+      {game.isActive &&
+        !game.chronoStarted &&
+        game.gameStarted &&
+        game.gameEnded && <EndGame playerId={playerId as string} />}
     </>
   );
 };

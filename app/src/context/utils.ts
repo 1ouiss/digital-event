@@ -4,6 +4,10 @@ export type GameType = {
   player1Domination: number;
   gameStarted: boolean;
   chronoStarted: boolean;
+  player1error: boolean;
+  player2error: boolean;
+  winnerIs: string;
+  gameEnded: boolean;
 };
 
 export type PlayerType = {
