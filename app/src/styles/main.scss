@@ -1,5 +1,14 @@
-*, html, body {
+*,
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: GraySun;
+  src: url(./fonts/GraySun.ttf);
+  font-weight: normal;
+  font-size: normal;
 }
