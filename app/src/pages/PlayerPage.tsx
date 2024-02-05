@@ -11,16 +11,10 @@ const PlayerPage = () => {
 
   return (
     <>
-      {!game.isActive && !game.gameStarted && (
-        <BeforeGame playerId={playerId as string} />
-      )}
-      {game.isActive && game.chronoStarted && game.gameStarted && (
-        <InGame playerId={playerId as string} />
-      )}
-      {game.isActive &&
-        !game.chronoStarted &&
-        game.gameStarted &&
-        game.gameEnded && <EndGame playerId={playerId as string} />}
+      {/* {game.status === "before" && <BeforeGame playerId={playerId as string} />}
+      {game.status === "inGame" && <InGame playerId={playerId as string} />}
+      {game.status === "endGame" && <EndGame playerId={playerId as string} />} */}
+      <EndGame playerId={playerId as string} />
     </>
   );
 };

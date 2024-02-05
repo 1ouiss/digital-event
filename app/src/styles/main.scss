@@ -1,3 +1,5 @@
+@import "./page/EndGame.scss";
+
 *,
 html,
 body {
@@ -16,3 +18,5 @@ body {
 * {
   font-family: GraySun;
 }
+@import "./components/showCombination.scss";
+@import "./page/inGame.scss";

@@ -1,11 +1,22 @@
-import { useEffect, useState } from "react";
-import "../styles/components/showCombination.scss";
+import { useEffect } from "react";
 
-export default function ShowCombination() {
-  const [combination, setCombination] = useState([1, 2, 3]);
-  const [index, setIndex] = useState(0);
-  const [showCombination, setShowCombination] = useState(true);
-  const [isVisible, setIsVisible] = useState(true);
+export default function ShowCombination({
+  combination,
+  showCombination,
+  setShowCombination,
+  index,
+  setIndex,
+  isVisible,
+  setIsVisible,
+}: {
+  combination: number[];
+  showCombination: boolean;
+  setShowCombination: React.Dispatch<React.SetStateAction<boolean>>;
+  index: number;
+  setIndex: React.Dispatch<React.SetStateAction<number>>;
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   useEffect(() => {
     const interval = setInterval(() => {
       if (index < combination.length - 1) {
@@ -19,20 +30,23 @@ export default function ShowCombination() {
         setShowCombination(false);
         setIsVisible(false);
       }
-    }, 2000);
+    }, 900);
 
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [combination, index]);
 
   return (
     <div className="combination-container">
-      <h1
+      <div
         className={`combination  ${isVisible ? "animation-combination" : ""}`}
       >
-        {index <= combination.length - 1 &&
-          showCombination === true &&
-          combination[index]}
-      </h1>
+        {combination &&
+          index <= combination.length - 1 &&
+          showCombination === true && (
+            <img src={`../assets/${combination[index]}.png`} alt="" />
+          )}
+      </div>
     </div>
   );
 }
