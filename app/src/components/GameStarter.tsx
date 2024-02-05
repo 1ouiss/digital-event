@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/components/gameStarter.scss";
 
 export default function GameStarter() {
-  const [starterArray, setStarterArray] = useState([3, 2, 1]);
+  const [starterArray] = useState([3, 2, 1]);
   const [index, setIndex] = useState(0);
   const [showGameStarter, setShowGameStarter] = useState(true);
   const [isVisible, setIsVisible] = useState(true);

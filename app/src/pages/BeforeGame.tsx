@@ -1,14 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import GameStarter from "../components/GameStarter";
 import "../styles/page/beforeGame.scss";
 import { Context } from "../context/Context";
 
 const BeforeGame = ({ playerId }: { playerId: string }) => {
   const { game } = useContext(Context);
-  const [displayNone, setDisplayNone] = useState(false);
 
   useEffect(() => {
     console.log(game);
+    console.log(playerId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [game]);
 
   return (
