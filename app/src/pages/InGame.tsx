@@ -13,20 +13,23 @@ const InGame = ({ playerId }: { playerId: string }) => {
   const [index, setIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [playerError, setPlayerError] = useState(false);
+  const [animationCircle, setAnimationCircle] = useState(false);
 
   useEffect(() => {
     console.log("uef 1");
-    if (playerId === "player1") {
-      setShowCombination(true);
-      setIsVisible(true);
-      setIndex(0);
-      setCombinationToShow(player1.combination);
-    } else if (playerId === "player2") {
-      setShowCombination(true);
-      setIsVisible(true);
-      setIndex(0);
-      setCombinationToShow(player2.combination);
-    }
+    setTimeout(() => {
+      if (playerId === "player1") {
+        setShowCombination(true);
+        setIsVisible(true);
+        setIndex(0);
+        setCombinationToShow(player1.combination);
+      } else if (playerId === "player2") {
+        setShowCombination(true);
+        setIsVisible(true);
+        setIndex(0);
+        setCombinationToShow(player2.combination);
+      }
+    }, 500);
   }, [player1.combination, player2.combination, playerId]);
 
   useEffect(() => {
@@ -100,12 +103,16 @@ const InGame = ({ playerId }: { playerId: string }) => {
             playerId === "player1" ? (
               <div
                 id={index.toString()}
-                className={`circle ${gameArray1[index] ?? "empty-circle"}`}
+                className={`circle ${
+                  gameArray1[index] ? "filled-circle" : "empty-circle"
+                }`}
               ></div>
             ) : (
               <div
                 id={index.toString()}
-                className={`circle ${gameArray2[index] ?? "empty-circle"}`}
+                className={`circle ${
+                  gameArray1[index] ? "filled-circle" : "empty-circle"
+                }`}
               ></div>
             )
           )}
