@@ -64,6 +64,22 @@
   font-size: 40px;
 }
 
+.in-game-success {
+  width: 100%;
+  height: 100vh;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 255, 0, 0.7);
+  animation: shake 0.2s;
+  color: white;
+  font-size: 40px;
+}
+
 @keyframes shake {
   0% {
     transform: translate(12px);

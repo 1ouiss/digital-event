@@ -7,6 +7,8 @@ export type GameType = {
   status: "before" | "inGame" | "endGame";
   scorePlayer1: number;
   scorePlayer2: number;
+  player1success: boolean;
+  player2success: boolean;
 };
 
 export type PlayerType = {
