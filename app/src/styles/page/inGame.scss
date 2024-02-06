@@ -1,91 +1,181 @@
 .game-container {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 
 .game-player2 {
-    background-image: url("../../../assets/inGameBackground-player2.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url("../../../assets/inGameBackground-player2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .game-player1 {
-    background-image: url("../../../assets/inGameBackground-player1.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url("../../../assets/inGameBackground-player1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .in-game-header {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    & .logo-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 10px;
-
-        h2 {
-            font-family: GraySun;
-            font-size: 40px;
-            color: white;
-            margin: 0;
-        }
-
-        & img {
-            width: 100px;
-            height: 100%;
-        }
-    }
-}
-
-.in-game-error{
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  & .logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 10px;
 
-    font-size: 40px;
-    color: white;
-    font-family: GraySun;
+    h2 {
+      font-family: GraySun;
+      font-size: 40px;
+      color: white;
+      margin: 0;
+    }
+
+    & img {
+      width: 100px;
+      height: 100%;
+    }
+  }
+}
+
+.in-game-error {
+  width: 100%;
+  height: 100vh;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0.7);
+  animation: shake 0.3s;
+  color: white;
+  font-size: 40px;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(12px);
+  }
+  10% {
+    transform: translate(-14px);
+  }
+  20% {
+    transform: translate(-18px);
+  }
+  30% {
+    transform: translate(18px);
+  }
+  40% {
+    transform: translate(14px);
+  }
+  50% {
+    transform: translate(-14px);
+  }
+  120% {
+    transform: translate(-18px);
+  }
+  70% {
+    transform: translate(18px);
+  }
+  80% {
+    transform: translate(-14px);
+  }
+  90% {
+    transform: translate(14px);
+  }
+  100% {
+    transform: translate(14px);
+  }
+}
+
+.glitch {
+  position: relative;
+  letter-spacing: 4px;
+  animation: shift 4s ease-in-out alternate;
+  transform: skewX(0deg);
+  z-index: 1;
+}
+
+@keyframes shift {
+  0%,
+  40%,
+  44%,
+  58%,
+  61%,
+  65%,
+  69%,
+  73%,
+  100% {
+    transform: skewX(0deg);
+  }
+
+  41% {
+    transform: skewX(10deg);
+  }
+
+  42% {
+    transform: skewX(-10deg);
+  }
+
+  59% {
+    transform: skewX(10deg);
+  }
+
+  60% {
+    transform: skewX(-10deg);
+  }
+
+  63% {
+    transform: skewX(10deg);
+  }
+
+  70% {
+    transform: skewX(-10deg);
+  }
+
+  71% {
+    transform: skewX(10deg);
+  }
 }
 
 .bottom-page {
-    position: absolute;
-    bottom: 60px;
+  position: absolute;
+  bottom: 120px;
+  width: 100%;
+  img {
     width: 100%;
-    img {
-        width: 100%;
-        height: 100%;
-    }
+    height: 100%;
+  }
 }
 
 .player-score {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-    background: rgba(255, 255, 255, 0.20);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.2);
 
-    h3 {
-        font-family: GraySun;
-        font-size: 40px;
-        color: white;
-    }   
-    h4 {
-        font-family: GraySun;
-        font-size: 20px;
-        color: white;
-    }
+  h3 {
+    font-family: GraySun;
+    font-size: 40px;
+    color: white;
+  }
+  h4 {
+    font-family: GraySun;
+    font-size: 20px;
+    color: white;
+  }
 }

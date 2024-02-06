@@ -39,7 +39,7 @@ const InGame = ({ playerId }: { playerId: string }) => {
     } else if (game.player2error && playerId === "player2") {
       setPlayerError(true);
     }
-  }, [game.player1error, game.player2error, playerId]);
+  }, [game, playerId]);
 
   useEffect(() => {
     console.log("uef error");
@@ -86,7 +86,9 @@ const InGame = ({ playerId }: { playerId: string }) => {
 
       {playerError && (
         <div className="in-game-error">
-          Pas très bon une erreur est survenue !
+          <h1 className="glitch" data-glitch="glitch">
+            ERREUR !!!
+          </h1>
         </div>
       )}
 
