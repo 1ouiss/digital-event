@@ -11,7 +11,7 @@ const InGame = ({ playerId }: { playerId: string }) => {
   const [combinationToShow, setCombinationToShow] = useState<number[]>([]);
   const [showCombination, setShowCombination] = useState(true);
   const [index, setIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [playerError, setPlayerError] = useState(false);
 
   useEffect(() => {
