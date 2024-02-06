@@ -13,7 +13,6 @@ const InGame = ({ playerId }: { playerId: string }) => {
   const [index, setIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [playerError, setPlayerError] = useState(false);
-  const [animationCircle, setAnimationCircle] = useState(false);
 
   useEffect(() => {
     console.log("uef 1");
@@ -111,7 +110,7 @@ const InGame = ({ playerId }: { playerId: string }) => {
               <div
                 id={index.toString()}
                 className={`circle ${
-                  gameArray1[index] ? "filled-circle" : "empty-circle"
+                  gameArray2[index] ? "filled-circle" : "empty-circle"
                 }`}
               ></div>
             )
