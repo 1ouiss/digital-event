@@ -5,11 +5,10 @@ import { Context } from "../context/Context";
 
 const InGame = ({ playerId }: { playerId: string }) => {
   // const [endTimer, setEndTimer] = useState(false);
-  const { player1, player2, game } = useContext(Context);
+  const { player1, player2, game, gameArray1, gameArray2 } =
+    useContext(Context);
 
   const [combinationToShow, setCombinationToShow] = useState<number[]>([]);
-  const [gameArray1, setGameArray1] = useState([]);
-  const [gameArray2, setGameArray2] = useState([]);
   const [showCombination, setShowCombination] = useState(true);
   const [index, setIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
