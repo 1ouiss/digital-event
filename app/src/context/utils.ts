@@ -22,6 +22,10 @@ export type ContextType = {
   setPlayer1: (player: PlayerType) => void;
   player2: PlayerType;
   setPlayer2: (player: PlayerType) => void;
+  gameArray1: number[];
+  setGameArray1: (gameArray: number[]) => void;
+  gameArray2: number[];
+  setGameArray2: (gameArray: number[]) => void;
 };
 
 export type Props = {
