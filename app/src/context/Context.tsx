@@ -10,6 +10,9 @@ const ContextProvider: FC<Props> = ({ children }) => {
   const [player1, setPlayer1] = useState({} as PlayerType);
   const [player2, setPlayer2] = useState({} as PlayerType);
 
+  const [gameArray1, setGameArray1] = useState([] as number[]);
+  const [gameArray2, setGameArray2] = useState([] as number[]);
+
   const getPlayer1 = () => {
     const collectionRef = collection(db, "player1");
     onSnapshot(collectionRef, async (querySnapshot) => {
@@ -46,13 +49,33 @@ const ContextProvider: FC<Props> = ({ children }) => {
     });
   };
 
+  const getGameArray1 = () => {
+    const collectionRef = collection(db, "gameArray1");
+    onSnapshot(collectionRef, async (querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        setGameArray1(doc.data().gameArray);
+      });
+    });
+  };
+
+  const getGameArray2 = () => {
+    const collectionRef = collection(db, "gameArray1");
+    onSnapshot(collectionRef, async (querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        setGameArray2(doc.data().array);
+      });
+    });
+  };
+
   useEffect(() => {
     const url = window.location.href;
-    if (url.includes('player1')) {
+    if (url.includes("player1")) {
       getPlayer1();
+      getGameArray1();
     }
-    if (url.includes('player2')) {
+    if (url.includes("player2")) {
       getPlayer2();
+      getGameArray2();
     }
     getGame();
   }, []);
@@ -66,6 +89,10 @@ const ContextProvider: FC<Props> = ({ children }) => {
         setPlayer1,
         player2,
         setPlayer2,
+        gameArray1,
+        setGameArray1,
+        gameArray2,
+        setGameArray2,
       }}
     >
       {children}

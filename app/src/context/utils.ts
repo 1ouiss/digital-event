@@ -12,6 +12,7 @@ export type GameType = {
 export type PlayerType = {
   id: string;
   combination: number[];
+  gameArray: number[];
 };
 
 export type ContextType = {

@@ -14,18 +14,26 @@ const InGame = ({ playerId }: { playerId: string }) => {
   const [playerError, setPlayerError] = useState(false);
 
   useEffect(() => {
-    setShowCombination(true);
-    setIsVisible(true);
-    setIndex(0);
+    console.log("uef 1");
     if (playerId === "player1") {
+      setShowCombination(true);
+      setIsVisible(true);
+      setIndex(0);
       setCombinationToShow(player1.combination);
     } else if (playerId === "player2") {
+      setShowCombination(true);
+      setIsVisible(true);
+      setIndex(0);
       setCombinationToShow(player2.combination);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [player1, player2]);
+  }, [player1.combination, player2.combination, playerId]);
+
+  // useEffect(() => {
+  //   console.log(player1.gameArray, player2.gameArray);
+  // }, [player1.gameArray, player2.gameArray]);
 
   useEffect(() => {
+    console.log("uef 2");
     if (game.player1error && playerId === "player1") {
       setPlayerError(true);
     } else if (game.player2error && playerId === "player2") {
@@ -34,14 +42,25 @@ const InGame = ({ playerId }: { playerId: string }) => {
   }, [game.player1error, game.player2error, playerId]);
 
   useEffect(() => {
+    console.log("uef error");
+
     if (!playerError) return;
-    setTimeout(() => {
-      setPlayerError(false);
-      setShowCombination(true);
-      setIsVisible(true);
-      setIndex(0);
-    }, 500);
-  }, [playerError]);
+    if (playerId === "player1" && game.player1error) {
+      setTimeout(() => {
+        setPlayerError(false);
+        setShowCombination(true);
+        setIsVisible(true);
+        setIndex(0);
+      }, 500);
+    } else if (playerId === "player2" && game.player2error) {
+      setTimeout(() => {
+        setPlayerError(false);
+        setShowCombination(true);
+        setIsVisible(true);
+        setIndex(0);
+      }, 500);
+    }
+  }, [playerError, playerId, game.player1error, game.player2error]);
 
   // endTimer === false -> CountDownTimer
   // endTimer === true -> 00:00 Votre partie est fini
