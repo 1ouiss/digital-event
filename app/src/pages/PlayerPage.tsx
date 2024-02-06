@@ -12,7 +12,7 @@ const PlayerPage = () => {
   return (
     <>
       {game.status === "before" && <BeforeGame playerId={playerId as string} />}
-      {game.status === "inGame" && <InGame playerId={playerId as string} />}
+      <InGame playerId={playerId as string} />
       {game.status === "endGame" && <EndGame playerId={playerId as string} />}
     </>
   );

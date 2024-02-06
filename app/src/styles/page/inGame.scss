@@ -200,9 +200,34 @@
     border-radius: 50%;
     background-color: #ffffff74;
     border: solid 3px white;
+    transition: all 0.3s;
   }
 
   .empty-circle {
     background: none;
+    transition: all 0.3s;
   }
+
+  .filled-circle {
+    animation: fadeInAndGrow 0.3s ease-in-out;
+  }
+}
+
+@keyframes fadeInAndGrow {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animation-circle {
+  animation: fadeInAndGrow 0.3s ease-in-out;
 }
