@@ -5,7 +5,8 @@ import { Context } from "../context/Context";
 
 const InGame = ({ playerId }: { playerId: string }) => {
   // const [endTimer, setEndTimer] = useState(false);
-  const { player1, player2, game } = useContext(Context);
+  const { player1, player2, game, gameArray1, gameArray2 } =
+    useContext(Context);
 
   const [combinationToShow, setCombinationToShow] = useState<number[]>([]);
   const [showCombination, setShowCombination] = useState(true);
@@ -28,9 +29,9 @@ const InGame = ({ playerId }: { playerId: string }) => {
     }
   }, [player1.combination, player2.combination, playerId]);
 
-  // useEffect(() => {
-  //   console.log(player1.gameArray, player2.gameArray);
-  // }, [player1.gameArray, player2.gameArray]);
+  useEffect(() => {
+    console.log(player1.gameArray, player2.gameArray);
+  }, [player1.gameArray, player2.gameArray]);
 
   useEffect(() => {
     console.log("uef 2");
@@ -71,6 +72,7 @@ const InGame = ({ playerId }: { playerId: string }) => {
           <img src={`../assets/${playerId}-logo.png`} alt="" />
           {playerId === "player1" ? <h2>Chimère</h2> : <h2>Archange</h2>}
         </div>
+
         <div className="player-score">
           <h3>
             {playerId === "player1" ? (
@@ -89,6 +91,24 @@ const InGame = ({ playerId }: { playerId: string }) => {
           <h1 className="glitch" data-glitch="glitch">
             ERREUR !!!
           </h1>
+        </div>
+      )}
+
+      {!showCombination && (
+        <div className="circle-container">
+          {combinationToShow.map((_, index) =>
+            playerId === "player1" ? (
+              <div
+                id={index.toString()}
+                className={`circle ${gameArray1[index] ?? "empty-circle"}`}
+              ></div>
+            ) : (
+              <div
+                id={index.toString()}
+                className={`circle ${gameArray2[index] ?? "empty-circle"}`}
+              ></div>
+            )
+          )}
         </div>
       )}
 
