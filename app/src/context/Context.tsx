@@ -59,10 +59,10 @@ const ContextProvider: FC<Props> = ({ children }) => {
   };
 
   const getGameArray2 = () => {
-    const collectionRef = collection(db, "gameArray1");
+    const collectionRef = collection(db, "gameArray2");
     onSnapshot(collectionRef, async (querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        setGameArray2(doc.data().array);
+        setGameArray2(doc.data().gameArray);
       });
     });
   };

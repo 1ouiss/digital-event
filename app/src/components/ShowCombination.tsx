@@ -20,17 +20,15 @@ export default function ShowCombination({
   useEffect(() => {
     const interval = setInterval(() => {
       if (index < combination.length - 1) {
-        setIsVisible(false);
         setIndex((prev) => prev + 1);
-        setInterval(() => {
-          setIsVisible(true);
-        }, 5);
       } else {
         clearInterval(interval);
-        setShowCombination(false);
         setIsVisible(false);
+        setTimeout(() => {
+          setShowCombination(false);
+        }, 300);
       }
-    }, 500);
+    }, 800);
 
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,18 +37,32 @@ export default function ShowCombination({
   return (
     <div className="combination-container">
       <div
-        className={`combination  ${isVisible ? "animation-combination" : ""}`}
+        className={`combination  ${
+          isVisible ? "animation-combination" : "animation-fade-out"
+        }`}
       >
         {combination &&
           index <= combination.length - 1 &&
           showCombination === true && (
             <>
               {combination[index] === 1 || combination[index] === 31 ? (
-                <img src="../assets/symbole1.png" alt="" />
+                <img
+                  src="../assets/symbole1.png"
+                  alt=""
+                  className="animation-symbole"
+                />
               ) : combination[index] === 2 || combination[index] === 47 ? (
-                <img src="../assets/symbole2.png" alt="" />
+                <img
+                  src="../assets/symbole2.png"
+                  alt=""
+                  className="animation-symbole"
+                />
               ) : combination[index] === 4 || combination[index] === 79 ? (
-                <img src="../assets/symbole3.png" alt="" />
+                <img
+                  src="../assets/symbole3.png"
+                  alt=""
+                  className="animation-symbole"
+                />
               ) : (
                 <></>
               )}
