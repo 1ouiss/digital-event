@@ -44,6 +44,24 @@
     transform: scale(0.5);
   }
 }
+.animation-symbole {
+  animation: test 850ms ease-in-out infinite;
+}
+
+@keyframes test {
+  0% {
+    transform: scale(0.9);
+  }
+  15% {
+    transform: scale(1);
+  }
+  85% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
 
 .animation-fade-out {
   animation: fadeOut 0.5s ease-in-out;

@@ -46,11 +46,23 @@ export default function ShowCombination({
           showCombination === true && (
             <>
               {combination[index] === 1 || combination[index] === 31 ? (
-                <img src="../assets/symbole1.png" alt="" />
+                <img
+                  src="../assets/symbole1.png"
+                  alt=""
+                  className="animation-symbole"
+                />
               ) : combination[index] === 2 || combination[index] === 47 ? (
-                <img src="../assets/symbole2.png" alt="" />
+                <img
+                  src="../assets/symbole2.png"
+                  alt=""
+                  className="animation-symbole"
+                />
               ) : combination[index] === 4 || combination[index] === 79 ? (
-                <img src="../assets/symbole3.png" alt="" />
+                <img
+                  src="../assets/symbole3.png"
+                  alt=""
+                  className="animation-symbole"
+                />
               ) : (
                 <></>
               )}
