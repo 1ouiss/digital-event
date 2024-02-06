@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   & img{
-    width: 500px;
+    width: 400px;
     height: 100%;
   }
 }
@@ -31,5 +31,5 @@
 }
 
 .animation-combination {
-  animation: fadeInAndGrow 0.8s ease-in-out;
+  animation: fadeInAndGrow 0.3s ease-in-out;
 }

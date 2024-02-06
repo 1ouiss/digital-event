@@ -30,11 +30,11 @@ export default function ShowCombination({
         setShowCombination(false);
         setIsVisible(false);
       }
-    }, 900);
+    }, 500);
 
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [combination, index]);
+  }, [combination, index, isVisible]);
 
   return (
     <div className="combination-container">
