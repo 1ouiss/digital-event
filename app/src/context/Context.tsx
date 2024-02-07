@@ -33,6 +33,7 @@ const ContextProvider: FC<Props> = ({ children }) => {
           id: doc.id,
           ...doc.data(),
         } as PlayerType);
+        console.log("doc.data().combination =>", doc.data().combination);
       });
     });
   };

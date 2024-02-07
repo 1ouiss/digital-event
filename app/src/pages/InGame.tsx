@@ -22,13 +22,11 @@ const InGame = ({ playerId }: { playerId: string }) => {
         setIsVisible(true);
         setIndex(0);
         setCombinationToShow(player1.combination);
-        console.log("player1.combination => ", player1.combination);
         setShowCombination(true);
       } else if (playerId === "player2") {
         setIsVisible(true);
         setIndex(0);
         setCombinationToShow(player2.combination);
-        console.log("player2.combination => ", player2.combination);
         setShowCombination(true);
       }
     }, 500);
