@@ -16,7 +16,7 @@ function App() {
             <Route path="/suddendeath" element={<SuddenDeath />} />
             <Route path="/waiting" element={<Waiting />} />
             <Route path="*" element={<NotFound />} />
-            <Route path="/scorepage" element={<ScorePage />} />
+            <Route path="/scorepage/:playerId" element={<ScorePage />} />
           </Routes>
         </BrowserRouter>
       </ContextProvider>
