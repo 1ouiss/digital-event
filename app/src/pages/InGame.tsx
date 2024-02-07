@@ -102,22 +102,51 @@ const InGame = ({ playerId }: { playerId: string }) => {
   return (
     <div className={`game-container game-${playerId}`}>
       <div className="in-game-header">
+        <div
+          className={`main-score ${
+            playerId === "player1" ? "overlay-red" : "overlay-blue"
+          }`}
+        >
+          <div className="player-score">
+            <div className="score">
+              <h3>
+                {playerId === "player1" ? (
+                  <>{game.scorePlayer1}</>
+                ) : (
+                  <>{game.scorePlayer2}</>
+                )}
+              </h3>
+              {/* <h4>POINTS</h4> */}
+            </div>
+
+            {playerId === "player1" ? <h2>Chimère</h2> : <h2>Archange</h2>}
+          </div>
+        </div>
         <div className="logo-container">
           <img src={`../assets/${playerId}-logo.png`} alt="" />
           {playerId === "player1" ? <h2>Chimère</h2> : <h2>Archange</h2>}
         </div>
-
-        <div className="player-score">
-          <h3>
-            {playerId === "player1" ? (
-              <>{game.scorePlayer1}</>
-            ) : (
-              <>{game.scorePlayer2}</>
-            )}
-          </h3>
-          <h4>POINTS</h4>
+        <div
+          className={`player-ennemy ${
+            playerId === "player1" ? "overlay-blue" : "overlay-red"
+          }`}
+        >
+          <div className="player-score">
+            <div className="score">
+              <h3>
+                {playerId === "player1" ? (
+                  <>{game.scorePlayer2}</>
+                ) : (
+                  <>{game.scorePlayer1}</>
+                )}
+              </h3>
+              {/* <h4>POINTS</h4> */}
+            </div>
+            {playerId === "player1" ? <h2>Archanges</h2> : <h2>Chimère</h2>}
+          </div>
         </div>
       </div>
+
       {/* <CountDownTimer minutes={3} seconds={0} setEndTimer={setEndTimer} /> */}
 
       {success && (

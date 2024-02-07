@@ -25,8 +25,8 @@
   height: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 20px 30px 0 20px;
   & .logo-container {
     display: flex;
     justify-content: center;
@@ -34,17 +34,62 @@
     flex-direction: column;
     gap: 10px;
 
-    h2 {
-      font-family: GraySun;
-      font-size: 40px;
-      color: white;
-      margin: 0;
-    }
-
     & img {
-      width: 100px;
+      width: 80px;
       height: 100%;
     }
+
+    h2 {
+      color: white;
+    }
+  }
+  .main-score,
+  .ennemy-score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.overlay-red {
+  // background-image: url("../../../public/assets/overlay-point-red.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 225px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../public/assets/blason-point-red.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .player-score {
+    // background: linear-gradient(
+    //   183deg,
+    //   rgba(255, 8, 0, 0.5) 0%,
+    //   rgba(70, 37, 90, 0.5) 100%
+    // );
+  }
+}
+
+.overlay-blue {
+  background-image: url("../../../public/assets/overlay-point.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 225px;
+  height: 195px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .player-score {
+    background: linear-gradient(
+      183deg,
+      rgba(135, 206, 235, 0.5) 0%,
+      rgba(0, 168, 107, 0.5) 100%
+    );
   }
 }
 
@@ -81,18 +126,18 @@
 }
 
 @keyframes shake-success {
-0% {
-  opacity: 0;
-  transform: scale(0.5);
-}
-50% {
-  opacity: 1;
-  transform: scale(1);
-}
-100% {
-  opacity: 0.5;
-  transform: scale(1);
-}
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
 }
 
 @keyframes shake {
@@ -182,8 +227,6 @@
 }
 
 .bottom-page {
-  // position: absolute;
-  // bottom: 120px;
   width: 100%;
   margin-bottom: 30px;
   img {
@@ -198,10 +241,22 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 100%;
-  background: rgba(255, 255, 255, 0.2);
+
+  .score {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+  }
+
+  h2 {
+    font-family: GraySun;
+    font-size: 24px;
+    color: white;
+    margin: 0;
+  }
 
   h3 {
     font-family: GraySun;
@@ -210,8 +265,9 @@
   }
   h4 {
     font-family: GraySun;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
+    margin-bottom: 5px;
   }
 }
 
