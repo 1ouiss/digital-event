@@ -33,7 +33,6 @@ const ContextProvider: FC<Props> = ({ children }) => {
           id: doc.id,
           ...doc.data(),
         } as PlayerType);
-        console.log("doc.data().combination =>", doc.data().combination);
       });
     });
   };
@@ -70,6 +69,8 @@ const ContextProvider: FC<Props> = ({ children }) => {
 
   useEffect(() => {
     const url = window.location.href;
+    console.log("url => ", url);
+
     if (url.includes("player1")) {
       getPlayer1();
       getGameArray1();
