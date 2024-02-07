@@ -51,6 +51,7 @@ const InGame = ({ playerId }: { playerId: string }) => {
     if (!playerError) return;
     if (playerId === "player1" && game.player1error) {
       setTimeout(() => {
+        setCombinationToShow(player1.combination);
         setPlayerError(false);
         setShowCombination(true);
         setIsVisible(true);
@@ -58,12 +59,14 @@ const InGame = ({ playerId }: { playerId: string }) => {
       }, 500);
     } else if (playerId === "player2" && game.player2error) {
       setTimeout(() => {
+        setCombinationToShow(player2.combination);
         setPlayerError(false);
         setShowCombination(true);
         setIsVisible(true);
         setIndex(0);
       }, 500);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playerError, playerId, game]);
 
   useEffect(() => {
