@@ -83,14 +83,14 @@ const InGame = ({ playerId }: { playerId: string }) => {
         setShowCombination(true);
         setIsVisible(true);
         setIndex(0);
-      }, 500);
+      }, 400);
     } else if (playerId === "player2" && !game.player1success) {
       setTimeout(() => {
         setSuccess(false);
         setShowCombination(true);
         setIsVisible(true);
         setIndex(0);
-      }, 500);
+      }, 400);
     }
   }, [success, game, playerId]);
 
@@ -133,7 +133,7 @@ const InGame = ({ playerId }: { playerId: string }) => {
         </div>
       )}
 
-      {!showCombination && (
+      {!showCombination && !success && !playerError && (
         <div className="circle-container">
           {combinationToShow.map((_, index) =>
             playerId === "player1" ? (
