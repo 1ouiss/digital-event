@@ -1,8 +1,11 @@
+
+
 .scorepage{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-image: url('../../../assets/bg-dark-scorepage.png');
     background-position: center;
     background-size: cover;
@@ -38,13 +41,23 @@
     flex-direction: column;
     align-items: center;
     gap: 60px;
+    position: relative;
+    padding: 70px;
+}
+
+.overlay {
+    position: absolute;
+    top: -20px;
+    width: 120%;
+    height: 100%;
+    z-index: 1;
 }
 
 .content-scorepage {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 60px;
+    gap: 200px;
 
     h1 {
         font-family: GraySun;
