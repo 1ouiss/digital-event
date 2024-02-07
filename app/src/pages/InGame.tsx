@@ -19,15 +19,15 @@ const InGame = ({ playerId }: { playerId: string }) => {
     console.log("uef 1");
     setTimeout(() => {
       if (playerId === "player1") {
-        setShowCombination(true);
         setIsVisible(true);
         setIndex(0);
         setCombinationToShow(player1.combination);
-      } else if (playerId === "player2") {
         setShowCombination(true);
+      } else if (playerId === "player2") {
         setIsVisible(true);
         setIndex(0);
         setCombinationToShow(player2.combination);
+        setShowCombination(true);
       }
     }, 500);
   }, [player1.combination, player2.combination, playerId]);
