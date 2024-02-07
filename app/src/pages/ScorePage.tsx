@@ -1,17 +1,9 @@
-import { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useContext } from "react";
 import { Context } from "../context/Context";
 
 const ScorePage = () => {
-  const { playerId } = useParams();
-
   const { game } = useContext(Context);
 
-  useEffect(() => {
-    console.log(game);
-    console.log(playerId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
     <div className="scorepage">
       <div className="scorepage-up">
