@@ -9,7 +9,6 @@ export default defineConfig({
     react(),
     VitePWA({
       manifest,
-      strategies: "generateSW",
     }),
   ],
 });
