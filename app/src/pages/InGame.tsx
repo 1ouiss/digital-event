@@ -109,6 +109,9 @@ const InGame = ({ playerId }: { playerId: string }) => {
         >
           <div className="player-score">
             <div className="score">
+              <div className="logo-container">
+                <img src={`../assets/${playerId}-logo.png`} alt="" />
+              </div>
               <h3>
                 {playerId === "player1" ? (
                   <>{game.scorePlayer1}</>
@@ -119,20 +122,23 @@ const InGame = ({ playerId }: { playerId: string }) => {
               {/* <h4>POINTS</h4> */}
             </div>
 
-            {playerId === "player1" ? <h2>Chimère</h2> : <h2>Archange</h2>}
+            {/* {playerId === "player1" ? <h2>Chimère</h2> : <h2>Archange</h2>} */}
           </div>
         </div>
-        <div className="logo-container">
-          <img src={`../assets/${playerId}-logo.png`} alt="" />
-          {playerId === "player1" ? <h2>Chimère</h2> : <h2>Archange</h2>}
-        </div>
-        <div
-          className={`player-ennemy ${
-            playerId === "player1" ? "overlay-blue" : "overlay-red"
-          }`}
-        >
+        {/* <div className="logo-container">
+          <img src={`../assets/${playerId}-logo.png`} alt="" /> */}
+        {/* {playerId === "player1" ? <h2>Chimère</h2> : <h2>Archange</h2>} */}
+        {/* </div> */}
+        <div className="player-ennemy">
           <div className="player-score">
             <div className="score">
+              <div className="logo-container">
+                {playerId === "player1" ? (
+                  <img src={`../assets/player2-logo.png`} alt="" />
+                ) : (
+                  <img src={`../assets/player1-logo.png`} alt="" />
+                )}
+              </div>
               <h3>
                 {playerId === "player1" ? (
                   <>{game.scorePlayer2}</>
@@ -142,7 +148,7 @@ const InGame = ({ playerId }: { playerId: string }) => {
               </h3>
               {/* <h4>POINTS</h4> */}
             </div>
-            {playerId === "player1" ? <h2>Archanges</h2> : <h2>Chimère</h2>}
+            {/* {playerId === "player1" ? <h2>Archanges</h2> : <h2>Chimère</h2>} */}
           </div>
         </div>
       </div>

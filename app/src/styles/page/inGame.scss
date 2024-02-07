@@ -26,7 +26,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px 30px 0 20px;
+  padding: 40px 50px 0 40px;
   & .logo-container {
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@
     gap: 10px;
 
     & img {
-      width: 80px;
+      width: 60px;
       height: 100%;
     }
 
@@ -53,44 +53,57 @@
 }
 
 .overlay-red {
-  // background-image: url("../../../public/assets/overlay-point-red.png");
+  background-image: url("../../../assets/overlay-point-red-smaller.png");
   background-repeat: no-repeat;
   background-size: contain;
-  width: 225px;
-  height: 220px;
+  width: 220px;
+  height: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../../../public/assets/blason-point-red.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
-  .player-score {
-    // background: linear-gradient(
-    //   183deg,
-    //   rgba(255, 8, 0, 0.5) 0%,
-    //   rgba(70, 37, 90, 0.5) 100%
-    // );
-  }
+  // .player-score {
+  //   // background: linear-gradient(
+  //   //   183deg,
+  //   //   rgba(255, 8, 0, 0.5) 0%,
+  //   //   rgba(70, 37, 90, 0.5) 100%
+  //   // );
+  // }
 }
 
 .overlay-blue {
-  background-image: url("../../../public/assets/overlay-point.png");
+  background-image: url("../../../assets/overlay-point-blue-smaller.png");
   background-repeat: no-repeat;
   background-size: contain;
-  width: 225px;
-  height: 195px;
+  width: 220px;
+  height: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
-  .player-score {
-    background: linear-gradient(
-      183deg,
-      rgba(135, 206, 235, 0.5) 0%,
-      rgba(0, 168, 107, 0.5) 100%
-    );
-  }
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // .player-score {
+  //   background: linear-gradient(
+  //     183deg,
+  //     rgba(135, 206, 235, 0.5) 0%,
+  //     rgba(0, 168, 107, 0.5) 100%
+  //   );
+  // }
+}
+
+.player-ennemy {
+  width: 220px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .in-game-error {
@@ -244,11 +257,12 @@
   width: 180px;
   height: 180px;
   border-radius: 100%;
+  margin-bottom: 25px;
 
   .score {
     display: flex;
-    align-items: flex-end;
-    gap: 5px;
+    align-items: center;
+    gap: 25px;
   }
 
   h2 {
