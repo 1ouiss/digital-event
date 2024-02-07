@@ -8,24 +8,24 @@ const ScorePage = () => {
 
   return (
     <div className="scorepage">
-      <div className="scorepage-up">
-        <img src="../assets/bg-up.png" alt="" />
-      </div>
       <div className="content-scorepage">
-        {playerId === "player1" ? (
-          <div className="score-section">
-            <img src="../assets/logo-chimere.png" alt="" />
-            <h3>{game.scorePlayer1}</h3>
-          </div>
-        ) : (
-          <div className="score-section">
-            <img src="../assets/logo-archange.png" alt="" />
-            <h3>{game.scorePlayer2}</h3>
-          </div>
-        )}
-      </div>
-      <div className="scorepage-down">
-        <img src="../assets/bg-down.png" alt="" />
+        <div className="score-section">
+          {playerId === "player1" && (
+            <img src="../assets/overlay-red.png" className="overlay" />
+          )}
+          <img src="../assets/logo-chimere.png" />
+          <h3>{game.scorePlayer1}</h3>
+        </div>
+
+        <h1>VS</h1>
+
+        <div className="score-section">
+          {playerId === "player2" && (
+            <img src="../assets/overlay-green.png" className="overlay" />
+          )}
+          <img src="../assets/logo-archange.png" />
+          <h3>{game.scorePlayer2}</h3>
+        </div>
       </div>
     </div>
   );

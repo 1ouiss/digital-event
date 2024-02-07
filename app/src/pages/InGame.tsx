@@ -86,14 +86,14 @@ const InGame = ({ playerId }: { playerId: string }) => {
         setShowCombination(true);
         setIsVisible(true);
         setIndex(0);
-      }, 400);
+      }, 500);
     } else if (playerId === "player2" && !game.player1success) {
       setTimeout(() => {
         setSuccess(false);
         setShowCombination(true);
         setIsVisible(true);
         setIndex(0);
-      }, 400);
+      }, 500);
     }
   }, [success, game, playerId]);
 
