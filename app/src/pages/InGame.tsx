@@ -49,25 +49,25 @@ const InGame = ({ playerId }: { playerId: string }) => {
     console.log("uef error");
 
     if (!playerError) return;
-    if (playerId === "player1" && game.player1error) {
+    if (playerId === "player1" && !game.player1error) {
+      setIndex(0);
       setTimeout(() => {
-        setCombinationToShow(player1.combination);
+        // setCombinationToShow(player1.combination);
         setPlayerError(false);
         setShowCombination(true);
         setIsVisible(true);
-        setIndex(0);
       }, 500);
-    } else if (playerId === "player2" && game.player2error) {
+    } else if (playerId === "player2" && !game.player2error) {
+      setIndex(0);
       setTimeout(() => {
-        setCombinationToShow(player2.combination);
+        // setCombinationToShow(player2.combination);
         setPlayerError(false);
         setShowCombination(true);
         setIsVisible(true);
-        setIndex(0);
       }, 500);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [playerError, playerId, game]);
+  }, [playerId, game]);
 
   useEffect(() => {
     if (playerId === "player1" && game.player1success) {
