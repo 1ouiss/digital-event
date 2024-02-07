@@ -75,9 +75,24 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 255, 0, 0.7);
-  animation: shake 0.2s;
+  animation: shake-success 0.4s;
   color: white;
   font-size: 40px;
+}
+
+@keyframes shake-success {
+0% {
+  opacity: 0;
+  transform: scale(0.5);
+}
+50% {
+  opacity: 1;
+  transform: scale(1);
+}
+100% {
+  opacity: 0.5;
+  transform: scale(1);
+}
 }
 
 @keyframes shake {
