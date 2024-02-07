@@ -4,6 +4,7 @@ import SuddenDeath from "./pages/SuddenDeath";
 import Waiting from "./pages/Waiting";
 import { ContextProvider } from "./context/Context";
 import NotFound from "./pages/NotFound";
+import ScorePage from "./pages/ScorePage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/suddendeath" element={<SuddenDeath />} />
             <Route path="/waiting" element={<Waiting />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/scorepage/:playerId" element={<ScorePage />} />
           </Routes>
         </BrowserRouter>
       </ContextProvider>
