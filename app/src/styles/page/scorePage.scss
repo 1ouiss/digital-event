@@ -1,0 +1,65 @@
+.scorepage{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../assets/bg-dark-scorepage.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.scorepage-up{
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.scorepage-down{
+    width: 100%;
+    position: absolute;
+    bottom: 60px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.content-scorepage {
+    display: flex;
+    flex-direction: row;
+}
+
+.score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+.content-scorepage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+
+    h1 {
+        font-family: GraySun;
+        font-size: 100px;
+        color: white;
+    }
+
+    h3 {
+        font-family: GraySun;
+        font-size: 70px;
+        color: white;
+    }
+
+    img{
+        height: 400px;
+        width: 100%;
+    }
+}
