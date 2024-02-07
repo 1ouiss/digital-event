@@ -69,6 +69,8 @@ const ContextProvider: FC<Props> = ({ children }) => {
 
   useEffect(() => {
     const url = window.location.href;
+    console.log("url => ", url);
+
     if (url.includes("player1")) {
       getPlayer1();
       getGameArray1();

@@ -11,7 +11,7 @@ const EndGame = ({ playerId }: { playerId: string }) => {
           <div className="endgame-title-container">
             <div className="logo-chimere"></div>
             <h1>
-              Félicitations ! <br /> Les chimères ont gagnés
+              Félicitations ! <br /> Les chimères ont gagné
             </h1>
           </div>
         ) : "player1" === playerId && "player2" === game.winnerIs ? (
@@ -19,7 +19,7 @@ const EndGame = ({ playerId }: { playerId: string }) => {
             <div className="logo-chimere"></div>
             <h1>
               Dommage... <br />
-              Les archanges ont gagnés
+              Les archanges ont gagné
             </h1>
           </div>
         ) : "player2" === playerId && "player1" === game.winnerIs ? (
@@ -27,14 +27,14 @@ const EndGame = ({ playerId }: { playerId: string }) => {
             <div className="logo-archange"></div>
             <h1>
               Dommage... <br />
-              Les chimères ont gagnés
+              Les chimères ont gagné
             </h1>
           </div>
         ) : (
           <div className="endgame-title-container">
             <div className="logo-archange"></div>
             <h1>
-              Félicitations ! <br /> Les archanges ont gagnés
+              Félicitations ! <br /> Les archanges ont gagné
             </h1>
           </div>
         )}
