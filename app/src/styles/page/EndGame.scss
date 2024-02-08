@@ -1,5 +1,6 @@
 .endgame-player1,
-.endgame-player2 {
+.endgame-player2,
+.endgame-draw {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -53,6 +54,27 @@
 
 .endgame-player2 {
   background-image: url("../../../assets/BackgroundArchange.png");
+}
+
+.endgame-draw {
+  background-image: url("../../../assets/BackgroundTie.png");
+
+  .endgame-title-container {
+    flex-direction: row-reverse;
+    gap: 50px;
+  }
+  .logo-chimere {
+    width: 200px;
+    height: 260px;
+  }
+
+  .logo-archange {
+    width: 200px;
+    height: 260px;
+  }
+  h1 {
+    font-size: 40px;
+  }
 }
 
 .logo-chimere {

@@ -4,7 +4,7 @@ import { Context } from "../context/Context";
 const EndGame = ({ playerId }: { playerId: string }) => {
   const { game } = useContext(Context);
   return (
-    <div className={`endgame-${playerId}`}>
+    <div className={`endgame-${game.winnerIs}`}>
       <div className="bg-decoration-up"></div>
       <div className="endgame-container">
         {"player1" === playerId && "player1" === game.winnerIs ? (
@@ -30,12 +30,18 @@ const EndGame = ({ playerId }: { playerId: string }) => {
               Les chimères ont gagné
             </h1>
           </div>
-        ) : (
+        ) : "player2" === playerId && "player2" === game.winnerIs ? (
           <div className="endgame-title-container">
             <div className="logo-archange"></div>
             <h1>
               Félicitations ! <br /> Les archanges ont gagné
             </h1>
+          </div>
+        ) : (
+          <div className="endgame-title-container">
+            <div className="logo-archange"></div>
+            <h1>égalité totale</h1>
+            <div className="logo-chimere"></div>
           </div>
         )}
       </div>
