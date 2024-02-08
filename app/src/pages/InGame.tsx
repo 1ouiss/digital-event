@@ -15,6 +15,8 @@ const InGame = ({ playerId }: { playerId: string }) => {
   const [playerError, setPlayerError] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  const [timeoutCombinationValue, setTimeoutCombinationValue] = useState(800);
+
   useEffect(() => {
     console.log("uef 1");
     setTimeout(() => {
@@ -50,16 +52,23 @@ const InGame = ({ playerId }: { playerId: string }) => {
 
     if (!playerError) return;
     if (playerId === "player1" && !game.player1error) {
-      setIndex(0);
+      if (game.scorePlayer1 >= 5) {
+        setTimeoutCombinationValue(650);
+      }
       setTimeout(() => {
+        setIndex(0);
+
         // setCombinationToShow(player1.combination);
         setPlayerError(false);
         setShowCombination(true);
         setIsVisible(true);
       }, 500);
     } else if (playerId === "player2" && !game.player2error) {
-      setIndex(0);
+      if (game.scorePlayer2 >= 5) {
+        setTimeoutCombinationValue(650);
+      }
       setTimeout(() => {
+        setIndex(0);
         // setCombinationToShow(player2.combination);
         setPlayerError(false);
         setShowCombination(true);
@@ -81,6 +90,9 @@ const InGame = ({ playerId }: { playerId: string }) => {
   useEffect(() => {
     if (!success) return;
     if (playerId === "player1" && !game.player1success) {
+      if (game.scorePlayer1 >= 5) {
+        setTimeoutCombinationValue(650);
+      }
       setTimeout(() => {
         setSuccess(false);
         setShowCombination(true);
@@ -88,6 +100,9 @@ const InGame = ({ playerId }: { playerId: string }) => {
         setIndex(0);
       }, 500);
     } else if (playerId === "player2" && !game.player1success) {
+      if (game.scorePlayer2 >= 5) {
+        setTimeoutCombinationValue(650);
+      }
       setTimeout(() => {
         setSuccess(false);
         setShowCombination(true);
@@ -201,6 +216,7 @@ const InGame = ({ playerId }: { playerId: string }) => {
         setIndex={setIndex}
         isVisible={isVisible}
         setIsVisible={setIsVisible}
+        timeoutCombinationValue={timeoutCombinationValue}
       />
 
       <div className="bottom-page">

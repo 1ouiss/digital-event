@@ -8,6 +8,7 @@ export default function ShowCombination({
   setIndex,
   isVisible,
   setIsVisible,
+  timeoutCombinationValue,
 }: {
   combination: number[];
   showCombination: boolean;
@@ -16,6 +17,7 @@ export default function ShowCombination({
   setIndex: React.Dispatch<React.SetStateAction<number>>;
   isVisible: boolean;
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  timeoutCombinationValue: number;
 }) {
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,11 +26,10 @@ export default function ShowCombination({
       } else {
         clearInterval(interval);
         setIsVisible(false);
-        setTimeout(() => {
-          setShowCombination(false);
-        }, 300);
+        setShowCombination(false);
+        setTimeout(() => {}, 100);
       }
-    }, 800);
+    }, timeoutCombinationValue);
 
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -49,19 +50,31 @@ export default function ShowCombination({
                 <img
                   src="../assets/symbole1.png"
                   alt=""
-                  className="animation-symbole"
+                  className={
+                    timeoutCombinationValue === 800
+                      ? "animation-symbole"
+                      : "animation-symbole-2"
+                  }
                 />
               ) : combination[index] === 2 || combination[index] === 47 ? (
                 <img
                   src="../assets/symbole2.png"
                   alt=""
-                  className="animation-symbole"
+                  className={
+                    timeoutCombinationValue === 800
+                      ? "animation-symbole"
+                      : "animation-symbole-2"
+                  }
                 />
               ) : combination[index] === 4 || combination[index] === 79 ? (
                 <img
                   src="../assets/symbole3.png"
                   alt=""
-                  className="animation-symbole"
+                  className={
+                    timeoutCombinationValue === 800
+                      ? "animation-symbole"
+                      : "animation-symbole-2"
+                  }
                 />
               ) : (
                 <></>
