@@ -40,7 +40,7 @@ const EndGame = ({ playerId }: { playerId: string }) => {
         ) : (
           <div className="endgame-title-container">
             <div className="logo-archange"></div>
-            <h1>égalité totale</h1>
+            <h1>Égalité totale</h1>
             <div className="logo-chimere"></div>
           </div>
         )}
